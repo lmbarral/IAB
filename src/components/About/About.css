@@ -1,0 +1,43 @@
+.About-style {
+    background-color: /*var(--bg-color)*/ var(--bg-color-2);
+    margin: 2rem;
+    box-shadow: 1px 1px 20px rgba(48, 56, 65, .35);
+    border-radius: .5rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+
+.about-h1 {
+    font-size: 50px;
+}
+
+.about-text {
+    font-size: 20px;
+    flex-basis: 50rem;
+    padding: 1rem;
+    border: 2px solid var(--bg-color);
+    border-radius: .5rem;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.about-text::before {
+    content: "";
+    background-image: url("../images/StarryBackground.svg");
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .1;
+    position: absolute;
+}
+
+p {
+    text-align: justify;
+    color: var(--main-text-color);
+    font-weight: 600;
+    position: relative;
+}

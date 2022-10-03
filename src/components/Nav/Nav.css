@@ -1,0 +1,38 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    background: var(--main-text-color);
+    height: 3rem;
+    padding-left: 15%;
+    padding-right: 15%;
+    border-top: solid .1rem var(--bg-color-2);
+    border-bottom: solid .1rem black;
+}
+
+nav a {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--bg-color);
+    font-size: 1.5rem;
+    font-weight: 100;
+    text-decoration: none;
+    transition: var(--transition);
+    gap: 0.5rem;
+}
+
+nav a > div{
+    padding-top: 7%;
+}
+
+.BsCursor {
+    padding-top: 3%;
+}
+
+nav a:hover {
+    color: var(--title-color);
+}
