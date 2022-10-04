@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Nav from './components/Nav';
@@ -8,15 +9,23 @@ import Footer from './components/Footer/Footer';
 import Contacts from './components/Contacts';
 
 function App() {
+
+  const { state, CoinPickerBody, CoinPickerReturn } = CoinPicker();
+
   return (
     <div className="App">
       <>
         <Header />
-        <Nav />
-        <About />
-        <Services />
-        <CoinPicker />
-        <Contacts />
+        {state && (<CoinPickerReturn />)}
+        {!state && (
+          <>
+            <Nav />
+            <About />
+            <Services />
+            <CoinPickerBody />
+            <Contacts />
+          </>
+        )}
         <Footer />
       </>
     </div>

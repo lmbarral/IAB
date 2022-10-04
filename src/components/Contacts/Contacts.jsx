@@ -9,6 +9,24 @@ const Contacts = () => (
                 <h2>Complete the following form and we will reply as soon as possible.</h2>
             </div>
             <form>
+                <div className="row">
+                    <div className="form-input">
+                        <label>First Name</label>
+                        <input />
+                    </div>
+                    <div className="form-input">
+                        <label>Last Name</label>
+                        <input />
+                    </div>
+                    <div className="form-input">
+                        <label>Email</label>
+                        <input className="email" />
+                    </div>
+                    <div className="form-input">
+                        <label>Comment</label>
+                        <input className="comment" />
+                    </div>
+                </div>
                 
             </form>
         </div>
