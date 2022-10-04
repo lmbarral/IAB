@@ -4,6 +4,8 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Services from './components/Services';
 import CoinPicker from './components/CoinPicker';
+import Footer from './components/Footer/Footer';
+import Contacts from './components/Contacts';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <About />
         <Services />
         <CoinPicker />
+        <Contacts />
+        <Footer />
       </>
     </div>
   );
