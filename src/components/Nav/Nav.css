@@ -1,3 +1,21 @@
+.home_button {
+    width: max-content;
+    display: block;
+    padding: 0.7rem 1.7rem;
+    z-index: 2;
+    position: fixed;
+    left: 94%;
+    transform: translateX(-50%);
+    bottom: 2rem;
+    display: flex;
+    gap: 0.8rem;
+    border-radius: 1rem;
+}
+
+button:hover {
+    color: var(--bg-color)
+}
+
 nav {
     display: flex;
     flex-direction: row;
