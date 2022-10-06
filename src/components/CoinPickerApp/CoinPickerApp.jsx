@@ -1,39 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 import './CoinPickerApp.css';
 import CoinGecko from "coingecko-api";
+import { useEffect, useState } from "react";
+import TableCoins from '../helpers/TableCoins';
 
-const CoinPickerApp = () => {
+function CoinPickerApp() {
+  const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState("");
+  
+  const CoinGeckoClient = new CoinGecko();
 
-    const CoinGeckoClient = new CoinGecko();
-
-    const CGPing = async() => {
-        const ping = await CoinGeckoClient.ping();
-        console.log(ping) // False
+  const getData = async () => {
+    try {
+      const res = await CoinGeckoClient.coins.list();
+      setCoins(res.data);
+      console.log(res.data);
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    const CoinList = async() => {
-        const list = await CoinGeckoClient.coins.list();
-        console.log(list)
-        return CoinList;
-    }
+  useEffect(() => {
+    getData();
+  }, []);
 
-    const CoinApp = () => {
+  const CoinApp = () => {
 
-        const { list } = CoinList();
+    return (
+        <div Container>
+          <div className="row">
+              <input
+              type="text"
+              placeholder="Search a Coin"
+              className="form-control bg-dark text-light border-0 mt-4 text-center"
+              autoFocus
+              onChange={(e) => setSearch(e.target.value)}
+              />
 
-        return(
-            <div className="CoinApp-style">
-                <h1>CoinPicker Dashboard</h1>
-                <p>{list.data[0]}</p> 
-            </div>
-        )
+              <TableCoins coins={coins} search={search} />
+          </div>
+        </div>
+    )
     }
 
     return {
         CoinApp,
-        CGPing,
-        CoinList,
-    };
-};
+        getData,
+    }
+}
 
-export default CoinPickerApp
+export default CoinPickerApp;
