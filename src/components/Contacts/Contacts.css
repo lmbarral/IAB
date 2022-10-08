@@ -4,10 +4,10 @@
     box-shadow: 1px 1px 20px rgba(48, 56, 65, .35);
     border-radius: .5rem;
     padding: 1rem;
-    /*display: flex;
+    display: flex;
     align-items: center;
     align-content: space-between;
-    flex-direction: column;*/
+    flex-direction: column;
 }
 
 .contacts-h1 {
@@ -19,18 +19,56 @@ h2 {
     margin-top: -1rem;
 }
 
-form {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--bg-color-2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+    padding: 1rem;
+    background-color: var(--title-color);
+    border: none;
+    position: relative;
+    border-radius: .5rem;
+}
+
+input[type=submit]:hover {
+    box-shadow: inset 0px -2px 20px var(--bg-color);
+    transition: var(--transition);
+}
+
+input[value=submit] {
+    color: var(--main-text-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+input[type=text]::before {
+    content: "";
+    background-image: url("../images/StarryBackground.svg");
+    background-size: cover;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .1;
+    position: absolute;
 }
 
 label {
-
+    color: var(--title-color);
+    font-size: 25px;
 }
 
-input[type=text] {
-    width: 50%;
+.form {
+  border-radius: 5px;
+  background-color: var(--bg-color-2);
+  padding: 20px;
 }
