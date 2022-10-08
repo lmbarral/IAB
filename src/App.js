@@ -8,11 +8,20 @@ import CoinPicker from './components/CoinPicker';
 import Footer from './components/Footer/Footer';
 import Contacts from './components/Contacts';
 import CoinPickerApp from './components/CoinPickerApp';
+import CardDashBoard from './components/CardDashboard/CardDashBoard';
+
+import useCoins from './Hooks/useCoins';
 
 function App() {
 
   const { state, CoinPickerBody, CoinPickerReturn } = CoinPicker();
-  const { CoinApp } = CoinPickerApp();
+  const { Form } = CoinPickerApp();
+  const { submitRequest } = useCoins();
+
+  const onSubmit = value => {
+    console.log({value});
+    submitRequest(value);
+  }
 
   return (
     <div className="App">
@@ -21,7 +30,8 @@ function App() {
         {state && (
           <>
             <CoinPickerReturn />
-            <CoinApp />
+            <CardDashBoard />
+            <Form submitSearch={onSubmit}/>
           </>)}
         {!state && (
           <>

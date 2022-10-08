@@ -1,52 +1,46 @@
 import React from "react";
 import './CoinPickerApp.css';
-import CoinGecko from "coingecko-api";
-import { useEffect, useState } from "react";
-import TableCoins from '../helpers/TableCoins';
+import { useState } from "react";
 
 function CoinPickerApp() {
-  const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState("");
-  
-  const CoinGeckoClient = new CoinGecko();
+  const [search, setSearch] = useState('');
 
-  const getData = async () => {
-    try {
-      const res = await CoinGeckoClient.coins.list();
-      setCoins(res.data);
-      console.log(res.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const Form = ({submitSearch}) => {
 
-  useEffect(() => {
-    getData();
-  }, []);
+    const onSubmit = e => {
+      e.preventDefault();
+      if (!search || search === '') return;
+      submitSearch(search);
+    };
 
-  const CoinApp = () => {
-
-    return (
-        <div Container>
-          <div className="row">
+    return(
+      <div className="CoinPickerApp-style">
+        <div className="form">
+          <form onSubmit={onSubmit}>
               <input
-              type="text"
-              placeholder="Search a Coin"
-              className="form-control bg-dark text-light border-0 mt-4 text-center"
-              autoFocus
-              onChange={(e) => setSearch(e.target.value)}
+                  aria-label="search"
+                  type="text"
+                  className={`form-control`}
+                  placeholder="Search Coins"
+                  autoFocus
+                  required
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
               />
 
-              <TableCoins coins={coins} search={search} />
-          </div>
+            <button type="submit" className="button" onClick={onSubmit}>
+              Search
+            </button>
+          </form>
         </div>
-    )
-    }
+      </div>  
+    );
+  };
 
-    return {
-        CoinApp,
-        getData,
-    }
+  return {
+    Form,
+  };
+
 }
 
 export default CoinPickerApp;
