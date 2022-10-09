@@ -27,12 +27,12 @@ const getCoinInfo = data => [
     },
     {
         name: 'price',
-        value: data.market_data.current_price["usd"],
+        value: data.market_data.current_price.usd,
         unit: '$',
     },
     {
         name: 'volume',
-        value: data.market_data.total_volume["usd"],
+        value: data.market_data.total_volume.usd,
         unit: '$',
     },
     {

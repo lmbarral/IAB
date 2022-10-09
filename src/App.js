@@ -9,17 +9,18 @@ import Footer from './components/Footer/Footer';
 import Contacts from './components/Contacts';
 import CoinPickerApp from './components/CoinPickerApp';
 import CardDashBoard from './components/CardDashboard/CardDashBoard';
+import DashBoard from './DashBoard/DashBoard';
 
 import useCoins from './Hooks/useCoins';
+
 
 function App() {
 
   const { state, CoinPickerBody, CoinPickerReturn } = CoinPicker();
   const { Form } = CoinPickerApp();
-  const { submitRequest } = useCoins();
+  const { submitRequest, cardInfoS } = useCoins();
 
   const onSubmit = value => {
-    console.log({value});
     submitRequest(value);
   }
 
@@ -32,6 +33,7 @@ function App() {
             <CoinPickerReturn />
             <CardDashBoard />
             <Form submitSearch={onSubmit}/>
+            {cardInfoS && <DashBoard {...cardInfoS.cardInfo}/>}
           </>)}
         {!state && (
           <>

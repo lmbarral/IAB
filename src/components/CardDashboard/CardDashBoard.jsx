@@ -14,7 +14,7 @@ const CardDashBoard = ({ data }) => {
                     As simple as it gets, just type in the search bar the coin you desire to look up to and the information will be displayed ASAP.
                 </p>
                 <div className="CardDashBoard-h12">
-                    <h1>
+                    <h1 className="position">
                         Powered by <a href="https://www.coingecko.com/" target="_blank">CoinGecko</a>
                     </h1>
                 </div>

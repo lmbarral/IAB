@@ -11,6 +11,8 @@ function CoinPickerApp() {
       e.preventDefault();
       if (!search || search === '') return;
       submitSearch(search);
+
+      setSearch("");
     };
 
     return(
@@ -24,11 +26,11 @@ function CoinPickerApp() {
                   placeholder="Search Coins"
                   autoFocus
                   required
-                  value={search}
                   onChange={e => setSearch(e.target.value)}
+                  value={search}
               />
 
-            <button type="submit" className="button" onClick={onSubmit}>
+            <button type="submit" className="button" onClick={()=>onSubmit}>
               Search
             </button>
           </form>
