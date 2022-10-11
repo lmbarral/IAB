@@ -1,50 +1,37 @@
 import React from "react";
 import './DashBoard.css';
+import Cards from './Cards'
 
-const DashBoard = ({ coinIcon, coinName, coingeckoRank, coinSymbol, coinLongS, coinShortS, coinPrice, coinVolume, coinPriceChange24}) => {
+import cardInfoS from '../Hooks/useCoins'
+
+const DashBoard = () => {
+
+    const addDashboardCleaner = () => {
+        console.log();
+    }
+
+    const storeCards = () => {
+        let cardsCount = 0;
+        const cardArray = [];
+        if(cardsCount <=5) {
+            cardArray[cardsCount] = cardInfoS.cardInfo;
+        }
+        return cardArray;
+    }
+
+    var card = [];
+    card = storeCards();
+
+    console.log(card);
+
     return(
         <div className="Dashboard-style">
-
-            <div className="cardContainer">
-
-                <div className="card">
-                    <div className="image">
-                        <img src={coinIcon}></img>
-                    </div>
-                    <div className="data_column">
-                        <div className="title">
-                            {coinName}
-                        </div>
-                        <div className="ticker">
-                            ({coinSymbol})
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div className="cardBody">
-                    <div className="cardBodyList">
-                        Price: $ {coinPrice}
-                    </div>
-                    <div className="cardBodyList">
-                        Volume: $ {coinVolume}
-                    </div>
-                    <div className="cardBodyList">
-                        PC24Hs: {coinPriceChange24}%
-                    </div>
-                    <div className="cardBodyList">
-                        Long Sentiment: {coinLongS}%
-                    </div>
-                    <div className="cardBodyList">
-                        Short Sentiment: {coinShortS}%
-                    </div>
-                    <div className="cardBodyList">
-                        CG Rank: {coingeckoRank}
-                    </div>
-                </div>
-            </div>
-
+            <button onClick={addDashboardCleaner}>
+                Clean Dashboard
+            </button>
+            {card.map(card => (<><Cards {...card} /></>))}
         </div>
-    )
-};
+    );
+}
 
 export default DashBoard

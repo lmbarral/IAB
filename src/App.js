@@ -10,6 +10,7 @@ import Contacts from './components/Contacts';
 import CoinPickerApp from './components/CoinPickerApp';
 import CardDashBoard from './components/CardDashboard/CardDashBoard';
 import DashBoard from './DashBoard/DashBoard';
+import Cards from './DashBoard/Cards';
 
 import useCoins from './Hooks/useCoins';
 
@@ -24,6 +25,10 @@ function App() {
     submitRequest(value);
   }
 
+  <>
+    <Cards {...cardInfoS.cardInfo} />
+  </>
+
   return (
     <div className="App">
       <>
@@ -33,8 +38,13 @@ function App() {
             <CoinPickerReturn />
             <CardDashBoard />
             <Form submitSearch={onSubmit}/>
-            {cardInfoS && <DashBoard {...cardInfoS.cardInfo}/>}
-          </>)}
+            {cardInfoS && (
+              <>
+              <DashBoard />
+              </>
+            )}
+          </>
+        )}
         {!state && (
           <>
             <Nav />
