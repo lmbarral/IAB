@@ -25,10 +25,6 @@ function App() {
     submitRequest(value);
   }
 
-  <>
-    <Cards {...cardInfoS.cardInfo} />
-  </>
-
   return (
     <div className="App">
       <>
@@ -40,7 +36,7 @@ function App() {
             <Form submitSearch={onSubmit}/>
             {cardInfoS && (
               <>
-              <DashBoard />
+              <DashBoard cards={cardInfoS.cardInfo}/>
               </>
             )}
           </>

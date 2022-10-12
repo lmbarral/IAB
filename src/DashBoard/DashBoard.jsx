@@ -2,9 +2,7 @@ import React from "react";
 import './DashBoard.css';
 import Cards from './Cards'
 
-import cardInfoS from '../Hooks/useCoins'
-
-const DashBoard = () => {
+const DashBoard = ({ cards }) => {
 
     const addDashboardCleaner = () => {
         console.log();
@@ -14,7 +12,7 @@ const DashBoard = () => {
         let cardsCount = 0;
         const cardArray = [];
         if(cardsCount <=5) {
-            cardArray[cardsCount] = cardInfoS.cardInfo;
+            cardArray[cardsCount] = cards;
         }
         return cardArray;
     }
