@@ -8,7 +8,6 @@
 
 .cardContainer {
     width: 20%;
-    max-width: 42%;
     margin: auto;
 
     align-items: center;
@@ -24,6 +23,7 @@
 .card {
     display: inline-flex;
     gap: 1rem;
+    padding-top: 1rem;
 }
 
 .card::before {
@@ -49,10 +49,12 @@
     font-weight: 600;
     padding-left: 0rem;
     color: var(--bg-color);
+    position: relative;
 }
 
 .image {
     width: fit-content;
+    position: relative;
 }
 
 img {
@@ -63,7 +65,7 @@ img {
     color: var(--title-color);
 }
 
-hr {
+.hr {
     border: 0rem;
     width: 12rem;
     height: .2rem;
@@ -90,3 +92,8 @@ hr {
     margin-left: 0.2rem;
 }
 
+@media screen and (max-width: 940px) {
+    .cardContainer {
+        width: 42%;
+    }
+}

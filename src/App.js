@@ -18,7 +18,7 @@ import useCoins from './Hooks/useCoins';
 function App() {
 
   const { state, CoinPickerBody, CoinPickerReturn } = CoinPicker();
-  const { Form } = CoinPickerApp();
+  const { Form, DashBoard } = CoinPickerApp();
   const { submitRequest, cardInfoS } = useCoins();
 
   const onSubmit = value => {
@@ -33,7 +33,7 @@ function App() {
           <>
             <CoinPickerReturn />
             <CardDashBoard />
-            <Form submitSearch={onSubmit}/>
+            <Form submitSearch={onSubmit} />
             {cardInfoS && (
               <>
               <DashBoard cards={cardInfoS.cardInfo}/>

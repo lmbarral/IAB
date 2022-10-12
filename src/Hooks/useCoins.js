@@ -17,7 +17,7 @@ const useCoins = () => {
         setCoin({coinInfo});
         const cardInfo = coinData(data);
         setCardInfoS({cardInfo});
-        console.log(cardInfoS);
+        //console.log(cardInfoS);
     };
 
 
@@ -33,8 +33,6 @@ const useCoins = () => {
 
         gatherCoinInfo(data);
     };
-
-    console.log(cardInfoS);
 
     return {
         cardInfoS,

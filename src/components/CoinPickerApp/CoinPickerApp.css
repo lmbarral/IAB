@@ -125,3 +125,7 @@ em {
     background-color: var(--bg-color-2);
     padding: 20px;
   }
+
+  .card_map {
+    padding-top: 1rem;
+}

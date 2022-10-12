@@ -2,7 +2,7 @@ import React from "react";
 import './DashBoard.css';
 import Cards from './Cards'
 
-const DashBoard = ({ cards }) => {
+/*const DashBoard = ({ cards }) => {
 
     const addDashboardCleaner = () => {
         console.log();
@@ -32,4 +32,4 @@ const DashBoard = ({ cards }) => {
     );
 }
 
-export default DashBoard
+export default DashBoard*/

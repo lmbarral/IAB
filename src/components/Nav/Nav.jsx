@@ -19,30 +19,38 @@ const Nav = () => {
                 </div>
                 <div className="Nav-style">
                     <nav>
-                        <a href="#about">
-                            <div>
-                                <AiOutlineQuestionCircle/>
-                            </div>
-                            About
-                        </a>
-                        <a href="#services">
-                            <div>
-                                <BiTrendingUp/>
-                            </div>
-                            Services
-                        </a>
-                        <a href="#contacts">
-                            <div>
-                                <IoIosContact/>
-                            </div>
-                            Contact
-                        </a>
-                        <a href="#coinpicker">
-                            <div className="BsCursor">
-                                <BsCursor/>
-                            </div>
-                            Coin Picker
-                        </a>
+                        <div className="about">
+                            <a href="#about">
+                                <div>
+                                    <AiOutlineQuestionCircle/>
+                                </div>
+                                About
+                            </a>
+                        </div>
+                        <div className="services">
+                            <a href="#services">
+                                <div>
+                                    <BiTrendingUp/>
+                                </div>
+                                Services
+                            </a>
+                        </div>
+                        <div className="contacts">
+                            <a href="#contacts">
+                                <div>
+                                    <IoIosContact/>
+                                </div>
+                                Contact
+                            </a>
+                        </div>
+                        <div className="coinPicker">
+                            <a href="#coinpicker">
+                                <div className="BsCursor">
+                                    <BsCursor/>
+                                </div>
+                                Coin Picker
+                            </a>
+                        </div>
                     </nav>
                 </div>
             </section>

@@ -19,7 +19,7 @@ const Cards = ({ coinIcon, coinName, coingeckoRank, coinSymbol, coinLongS, coinS
                         </div>
                     </div>
                 </div>
-                <hr />
+                <hr className="hr" />
                 <div className="cardBody">
                     <div className="cardBodyList">
                         Price: $ {coinPrice}
